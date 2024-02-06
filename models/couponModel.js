@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CouponSchema = mongoose.Schema(
+const CouponSchema = new mongoose.Schema(
   {
     name: {
       type: String,

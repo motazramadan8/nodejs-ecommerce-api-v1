@@ -112,7 +112,7 @@ exports.protectActive = asyncHandler(async (req, res, next) => {
 });
 
 /**
- * @desc   Make sure the user is admin or manger or user - Authoraization (User Permissions)
+ * @desc   Make sure the user is admin or manger or user - Authorization (User Permissions)
  */
 exports.allowedTo = (...roles) =>
   asyncHandler(async (req, res, next) => {
@@ -181,7 +181,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
 });
 
 /**
- * @desc   Verify reser code
+ * @desc   Verify reset code
  * @route  /api/v1/auth/verifyResetCode
  * @method POST
  * @access public
