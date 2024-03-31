@@ -6,6 +6,7 @@ const {
   deleteCartItem,
   clearLoggedUserCart,
   updateCartItemQuantity,
+  applyCoupon,
 } = require("../services/cartService");
 const authService = require("../services/authService");
 
@@ -18,6 +19,8 @@ router
   .post(addProductToCart)
   .get(getLoggedUserCart)
   .delete(clearLoggedUserCart);
+
+router.put("/applyCoupon", applyCoupon);
 
 router.route("/:itemId").put(updateCartItemQuantity).delete(deleteCartItem);
 

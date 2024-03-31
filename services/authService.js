@@ -158,7 +158,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   await user.save();
 
   // Send the reset code to user via email
-  const message = `Hi ${user.name},\n\n We received a request to reset the password on your E-shop Account. \n\n ${resetCode} \n\n Enter this code to complete reset. \n\n Thanks for helping us keep your account secure. \n E-shop Team.`;
+  const message = `Hi ${user.name},\n\n We received a request to reset the password on your QuickMart Account. \n\n ${resetCode} \n\n Enter this code to complete reset. \n\n Thanks for helping us keep your account secure. \n QuickMart Team.`;
 
   try {
     await sendEmail({
