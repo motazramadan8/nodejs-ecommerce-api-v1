@@ -48,9 +48,17 @@ exports.getOne = (Model, populationOpt) =>
     const { id } = req.params;
 
     // Get Document From DB
-    let query = Model.findById(id);
-    if (populationOpt) {
-      query = query.populate(populationOpt);
+    let query;
+    if (req.user.role === "user") {
+      query = Model.findOne({ _id: id, user: req.user._id });
+      if (populationOpt) {
+        query = query.populate(populationOpt);
+      }
+    } else {
+      query = Model.findById(id);
+      if (populationOpt) {
+        query = query.populate(populationOpt);
+      }
     }
 
     const document = await query;
@@ -76,10 +84,10 @@ exports.getAll = (Model, modelName = "") =>
     // Build query
     const apiFeatures = new ApiFeatures(Model.find(filter), req.query)
       .paginate(documentsCount)
-      .filrer()
+      .filter()
       .sort()
       .search(modelName)
-      .selectFeildes();
+      .selectFields();
 
     // Execute query
     const { mongooseQuery, paginationResults } = apiFeatures;

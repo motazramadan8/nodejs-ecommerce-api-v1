@@ -1,8 +1,6 @@
 const { check, param } = require("express-validator");
 const validatorMiddleware = require("../../middlewares/validatorMiddleware");
 
-// const Product = require("../../models/productModel");
-
 exports.addAddressValidator = [
   check("alias")
     .isString()

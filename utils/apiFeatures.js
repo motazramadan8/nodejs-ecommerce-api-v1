@@ -4,7 +4,7 @@ class ApiFeatures {
     this.queruStr = queruStr;
   }
 
-  filrer() {
+  filter() {
     const queryStrObg = { ...this.queruStr }; // Get copy of query string and save it in the variable
     const excludesFields = ["page", "sort", "limit", "fields", "keyword"];
     excludesFields.forEach((field) => delete queryStrObg[field]);
@@ -27,7 +27,7 @@ class ApiFeatures {
     return this;
   }
 
-  selectFeildes() {
+  selectFields() {
     if (this.queruStr.fields) {
       const selectedFields = this.queruStr.fields.split(",").join(" ");
       this.mongooseQuery = this.mongooseQuery.select(selectedFields);

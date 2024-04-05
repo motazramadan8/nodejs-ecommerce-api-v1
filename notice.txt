@@ -1,0 +1,9 @@
+----------------------
+-- What will I make --
+----------------------
+
+====> The user not allowed to review on product he didn't buy.
+
+====> Make 2 end points to set "tax price" and "shipping price" from admin
+
+====> If product quantity equals 0, you can't order this product

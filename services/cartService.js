@@ -1,9 +1,9 @@
 const asyncHandler = require("express-async-handler");
 
+const ApiError = require("../utils/apiError");
 const Cart = require("../models/cartModel");
 const Coupon = require("../models/couponModel");
 const Product = require("../models/productModel");
-const ApiError = require("../utils/apiError");
 
 const getTotalPrice = (cart) => {
   let totalPrice = 0;
